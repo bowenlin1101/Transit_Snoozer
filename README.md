@@ -12,7 +12,7 @@ Transit Snoozer is an Android app that helps commuters wake up at the right stop
 ## Requirements
 
 - Android device (minimum SDK 24 / Android 7.0)
-- Node.js 18 or higher
+- Node.js 20 or higher
 - React Native development environment
 
 ## Setup
