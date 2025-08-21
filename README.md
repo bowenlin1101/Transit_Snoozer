@@ -4,25 +4,22 @@ Transit Snoozer is an Android app that helps commuters wake up at the right stop
 
 ## Features
 
-- **Transit App Integration**: Works with popular transit apps like Google Maps, Citymapper, Moovit, and Transit
+- **Transit App Integration**: Works with popular transit apps like Google Maps, and Transit
 - **Smart Notifications**: Monitors real-time transit notifications to track your journey
-- **Customizable Alarms**: Set alarms to trigger when you're a specific number of stops away from your destination
 - **Multiple Alert Options**: Choose from different alarm sounds and volume levels
 - **Background Monitoring**: Continues tracking even when the app is in the background
-- **Sound Effects**: Audio feedback when starting/stopping tracking
 
 ## Requirements
 
 - Android device (minimum SDK 24 / Android 7.0)
 - Node.js 18 or higher
 - React Native development environment
-- Android Studio (for building release APKs)
 
 ## Setup
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/bowenlin1101/Transit_Snoozer 
    cd TransitAlarm
    ```
 
@@ -30,10 +27,6 @@ Transit Snoozer is an Android app that helps commuters wake up at the right stop
    ```bash
    npm install
    ```
-
-3. **Android-specific setup**
-   
-   The app requires notification access permission to monitor transit app notifications. This will be requested when you first run the app.
 
 ## Building the App
 
@@ -60,29 +53,13 @@ cd android
 
 The APK will be generated at: `android/app/build/outputs/apk/debug/app-debug.apk`
 
-### Release Build
-
-1. **Generate a signed release APK**
-   ```bash
-   cd android
-   ./gradlew assembleRelease
-   ```
-
-   Note: You'll need to set up signing keys first. See [React Native's signing guide](https://reactnative.dev/docs/signed-apk-android).
-
-2. **Build a release bundle for Play Store**
-   ```bash
-   cd android
-   ./gradlew bundleRelease
-   ```
-
 ## How It Works
 
-1. **Select Transit App**: Choose which transit app you're using (Google Maps, Citymapper, etc.)
-2. **Grant Permissions**: Allow notification access so the app can monitor transit updates
-3. **Start Tracking**: Begin your journey and the app will monitor notifications
-4. **Automatic Alarm**: When you're the specified number of stops away, the alarm triggers
-5. **Wake Up**: Tap "I'm Awake!" to stop the alarm and continue your journey
+1. **Select Transit App**: Choose which transit app you're using (Google Maps, or Transit)
+2. **Grant Permissions**: Allow notification access, and running in background permissions so the app can monitor transit updates
+3. **Start Tracking**: Begin your journey on the selected Transit app and Transit Snoozer will monitor notifications
+4. **Automatic Alarm**: When you're one stop away, the alarm triggers
+5. **Wake Up**: Tap "Stop Alarm" to stop the alarm and continue your journey
 
 ## App Structure
 
@@ -97,13 +74,6 @@ The APK will be generated at: `android/app/build/outputs/apk/debug/app-debug.apk
     - `NotificationListenerModule.kt` - Handles notification monitoring
     - `TransitNotificationListenerService.kt` - Background notification service
 
-## Permissions
-
-The app requires the following permissions:
-- **Notification Access**: To read transit app notifications
-- **Vibration**: For alarm alerts
-- **Run at Startup** (optional): To resume monitoring after device restart
-
 ## Troubleshooting
 
 - **App crashes on start**: Make sure you've run `npm install` and rebuilt the app
@@ -115,6 +85,3 @@ The app requires the following permissions:
 - **Lint**: `npm run lint`
 - **Clean build**: `cd android && ./gradlew clean`
 
-## License
-
-This project is private and proprietary.
